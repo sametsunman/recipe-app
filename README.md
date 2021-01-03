@@ -1,2 +1,9 @@
-# week_3-sametsunman
-week_3-sametsunman created by GitHub Classroom
+# Recipes App
+
+Yemek tarifleri uygulaması
+
+### Ekran Görüntüleri
+
+<div align="center">
+  <img width="600" src="/screenshot.png">
+</div>

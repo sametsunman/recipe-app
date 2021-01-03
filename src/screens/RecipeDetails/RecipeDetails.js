@@ -29,9 +29,15 @@ function RecipeDetails({route}) {
           style={styles.image}>
           <View style={styles.detail}>
             <Text style={styles.title}>{recipeDetail.strMeal}</Text>
-            <Icon name="bookmark-outline" size={35}/>
+            <Icon name="youtube" size={35} />
           </View>
         </ImageBackground>
+        <Text>
+        {recipeDetail.strArea} - {recipeDetail.strCategory}
+        </Text>
+        <Text>
+          {recipeDetail.strInstructions}
+        </Text>
         <Text>
           {recipeDetail.strInstructions}
         </Text>
