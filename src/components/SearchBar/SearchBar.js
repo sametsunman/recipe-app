@@ -9,7 +9,7 @@ function SearchBar(props) {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput onChangeText={(val) => setSearchedValue(val)} />
+        <TextInput onChangeText={(val) => setSearchedValue(val)} placeholder="Search Recipe..." />
       </View>
       <TouchableOpacity
         style={styles.iconContainer}

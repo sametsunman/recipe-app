@@ -24,13 +24,15 @@ function RecipeList(props) {
     }
 
     function searchMeal(searchedField) {
-      axios
-        .get(api_url, {
-          params: {
-            description: searchedField,
-          },
-        })
-        .then((response) => setMealList(response.data));
+
+      axios.get(api_url)
+        .then((response) => {
+          setMealList(response.data.meals.filter(x=> {
+            x.strMeal.toLowerCase()
+            .includes(searchedField.toLowerCase())
+          }));
+        });
+
     }
 
   
@@ -49,6 +51,8 @@ function RecipeList(props) {
           keyExtractor={(item) => item.idMeal}
           data={mealList}
           renderItem={renderMeal}
+          columnWrapperStyle={styles.item}
+          numColumns={2}
         />
       </View>
     </SafeAreaView>

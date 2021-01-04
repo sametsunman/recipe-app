@@ -4,7 +4,7 @@ const deviceSize = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      flex: 1
     },
     image: {
       height: deviceSize.height / 3,
@@ -16,12 +16,24 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 30,
     },
+    category: {
+      fontWeight: 'bold',
+      fontSize: 20,
+      marginLeft: 5
+    },
+    ingredients:{
+      margin:5
+    },
     detail: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: 5,
+      backgroundColor: '#cececeaa'
     },
+    instructions: {
+      margin:5
+    }
   });
 
   export default styles;

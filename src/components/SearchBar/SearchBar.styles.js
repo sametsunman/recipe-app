@@ -8,12 +8,15 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     backgroundColor: '#039be5',
-    padding: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
+    justifyContent: 'center'
   },
   inputContainer: {
-    padding: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
     borderColor: '#bdbdbd',
     borderWidth: 1,
     borderTopLeftRadius: 10,

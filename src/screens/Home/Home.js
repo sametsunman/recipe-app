@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import styles from './Home.styles';
-import {SafeAreaView, View, FlatList} from 'react-native';
-import {SearchBar, CategoryItem} from './../../components';
+import {SafeAreaView, View, FlatList, Text} from 'react-native';
+import {CategoryItem} from './../../components';
 
 function Home(props) {
 
@@ -21,17 +21,6 @@ function Home(props) {
           setCategoryList(response.data.categories)
         });
     }
-
-    function searchCategory(searchedField) {
-      axios
-        .get(api_url, {
-          params: {
-            description: searchedField,
-          },
-        })
-        .then((response) => setCategoryList(response.data));
-    }
-
   
     const renderCategory = ({item}) => (
       <CategoryItem
@@ -43,7 +32,7 @@ function Home(props) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <SearchBar onSearch={searchCategory} />
+        <Text style={styles.title}>Recipe App - Categories</Text>
         <FlatList
           keyExtractor={(item) => item.idCategory}
           data={categoryList}

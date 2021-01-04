@@ -5,6 +5,7 @@ import {styles} from './MealItem.styles';
 const MealItem = ({meal, onSelect}) => {
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={onSelect}>
       <Image
         resizeMode="contain"
         source={{uri: meal.strMealThumb}}
@@ -12,12 +13,10 @@ const MealItem = ({meal, onSelect}) => {
       />
       <View style={styles.footer}>
         <View style={styles.details}>
-          <Text style={styles.company}>{meal.strMeal}</Text>
+          <Text style={styles.name}>{meal.strMeal}</Text>
         </View>
-        <TouchableOpacity style={styles.buttonContainer} onPress={onSelect}>
-          <Text style={styles.buttonTitle}>Details</Text>
-        </TouchableOpacity>
       </View>
+      </TouchableOpacity>
     </View>
   );
 };

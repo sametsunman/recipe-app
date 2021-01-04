@@ -4,17 +4,18 @@ const deviceSize = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: '#e0e0e0',
     borderWidth: 1,
     borderColor: '#bdbdbd',
     margin: 5,
     marginVertical: 10,
     borderRadius: 10,
+    width:'95%'
   },
   logo: {
     height: deviceSize.height / 4,
   },
-  company: {
+  name: {
     fontWeight: 'bold',
     fontSize: 20,
   },

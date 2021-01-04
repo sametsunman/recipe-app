@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, View, Text, ImageBackground} from 'react-native';
+import {SafeAreaView, View, Text, ImageBackground, Linking} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from './RecipeDetails.styles';
 
@@ -20,6 +20,19 @@ function RecipeDetails({route}) {
     fetchRecipeData();
   }, []);
 
+  const Ingredients = () => {
+    let ingredientArray = [];
+
+    for (let i= 1; i <= 20 ; i++){
+      if(recipeDetail["strMeasure"+i] && recipeDetail["strMeasure"+i]!=="")
+        ingredientArray.push(<Text key={i} style={styles.ingredient}>{recipeDetail["strMeasure"+i]} {recipeDetail["strIngredient"+i]}</Text>);
+    }
+
+    return <View style={styles.ingredients}>{ingredientArray}</View>
+
+  
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
@@ -29,16 +42,14 @@ function RecipeDetails({route}) {
           style={styles.image}>
           <View style={styles.detail}>
             <Text style={styles.title}>{recipeDetail.strMeal}</Text>
-            <Icon name="youtube" size={35} />
+            <Icon name="video-library" size={30} onPress={()=>Linking.openURL(recipeDetail.strYoutube)} />
           </View>
         </ImageBackground>
-        <Text>
+        <Text style={styles.category}>
         {recipeDetail.strArea} - {recipeDetail.strCategory}
         </Text>
-        <Text>
-          {recipeDetail.strInstructions}
-        </Text>
-        <Text>
+        <Ingredients />
+        <Text  style={styles.instructions}>
           {recipeDetail.strInstructions}
         </Text>
       </View>
